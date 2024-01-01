@@ -1,0 +1,6 @@
+---
+const { time } = Astro.props;
+const now = new Date();
+---
+
+{time ? <time datetime={time.toISOString()}>{time.getFullYear()}</time> : <span>current</span>}

@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import profilePicture from '../assets/profile.jpg';
+---
+
+<header>
+	<div>
+		<h1>Pedro Pinho</h1>
+		<div>
+			<p>
+				Love to code, amazed by tools and reading a lot.
+				<br />
+				At the moment I'm going through an artesan journey, to find elegant solutions to real problems.
+			</p>
+			<span class="country">Brazil</span>
+		</div>
+		<ul class="list_social">
+			<li>Email</li>
+			<li>Github</li>
+			<li>Linkedin</li>
+		</ul>
+	</div>
+	<div>
+		<Image src={profilePicture} alt="Pedro Pinho" width={200} height={200} />
+	</div>
+</header>
+
+<style>
+	header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 32px;
+		width: 100%;
+
+		& h1 {
+			margin-top: 0;
+		}
+	}
+
+	img {
+		border-radius: 8px;
+	}
+
+	p {
+		max-width: 44ch;
+	}
+
+	.country {
+		font-size: 0.8em;
+	}
+
+	.list_social {
+		list-style: none;
+		display: flex;
+		gap: 12px;
+		padding-left: 0;
+		font-size: 0.8em;
+
+		& li {
+			background-color: rgb(255, 255, 255, 0.1);
+			padding: 6px 12px;
+			border-radius: 4px;
+		}
+	}
+</style>
