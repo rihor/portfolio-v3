@@ -1,12 +1,65 @@
+---
+import { map } from 'astro/zod';
+import { projects } from '../data/projects';
+---
+
 <section>
-	<ul>
-		<li>
-			<article>
-				<header>
-					<h1>Ouvidor</h1>
-				</header>
-				<div>Ombudsman app</div>
-			</article>
-		</li>
+	<h1>Projects</h1>
+	<ul class="projects_list">
+		{
+			projects.map((project) => (
+				<li>
+					<article>
+						<header>
+							<h1>{project.name}</h1>
+						</header>
+						<div>{project.description}</div>
+						<ul class="project_tech_list">
+							{project.techs.map((tech) => (
+								<li>{tech}</li>
+							))}
+						</ul>
+					</article>
+				</li>
+			))
+		}
 	</ul>
 </section>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.projects_list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		& li {
+			outline: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 4px;
+			padding: 16px 12px;
+		}
+	}
+
+	.project_tech_list {
+		display: flex;
+		flex-direction: row;
+		gap: 8px;
+
+		& li {
+			border-radius: 4px;
+			padding: 4px 8px;
+			background-color: rgb(255, 255, 255, 0.1);
+		}
+	}
+
+	article {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+</style>
