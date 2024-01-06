@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import profilePicture from '../assets/profile.jpg';
 ---
 
@@ -17,17 +18,17 @@ import profilePicture from '../assets/profile.jpg';
 		<ul class="list_social" aria-label="contact links">
 			<li>
 				<a href="mailto:pedro.rihor@outlook.com" aria-label="Email">
-					<i class="fa-solid fa-envelope"></i>
+					<Icon name="email" />
 				</a>
 			</li>
 			<li>
 				<a href="https://github.com/rihor" aria-label="Github">
-					<i class="fa-brands fa-github" aria-hidden></i>
+					<Icon name="github" />
 				</a>
 			</li>
 			<li>
 				<a href="https://www.linkedin.com/in/phpinhov/" aria-label="Linkedin">
-					<i class="fa-brands fa-linkedin" aria-hidden></i>
+					<Icon name="linkedin" />
 				</a>
 			</li>
 		</ul>
@@ -75,6 +76,14 @@ import profilePicture from '../assets/profile.jpg';
 			border-radius: 4px;
 			color: #fff;
 			transition: opacity 160ms ease-in-out;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			> * {
+				width: 16px;
+				height: 16px;
+			}
 		}
 
 		& a:hover {
