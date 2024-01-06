@@ -14,10 +14,22 @@ import profilePicture from '../assets/profile.jpg';
 			</p>
 			<span class="country">Brazil</span>
 		</div>
-		<ul class="list_social">
-			<li>Email</li>
-			<li>Github</li>
-			<li>Linkedin</li>
+		<ul class="list_social" aria-label="contact links">
+			<li>
+				<a href="mailto:pedro.rihor@outlook.com" aria-label="Email">
+					<i class="fa-solid fa-envelope"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/rihor" aria-label="Github">
+					<i class="fa-brands fa-github" aria-hidden></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.linkedin.com/in/phpinhov/" aria-label="Linkedin">
+					<i class="fa-brands fa-linkedin" aria-hidden></i>
+				</a>
+			</li>
 		</ul>
 	</div>
 	<div>
@@ -34,7 +46,7 @@ import profilePicture from '../assets/profile.jpg';
 		width: 100%;
 
 		& h1 {
-			margin-top: 0;
+			font-weight: 700;
 		}
 	}
 
@@ -57,10 +69,20 @@ import profilePicture from '../assets/profile.jpg';
 		padding-left: 0;
 		font-size: 0.8em;
 
-		& li {
+		& a {
 			background-color: rgb(255, 255, 255, 0.1);
 			padding: 6px 12px;
 			border-radius: 4px;
+			color: #fff;
+			transition: opacity 160ms ease-in-out;
+		}
+
+		& a:hover {
+			opacity: 0.7;
+		}
+
+		& a:active {
+			opacity: 0.4;
 		}
 	}
 </style>

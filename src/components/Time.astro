@@ -3,4 +3,18 @@ const { time } = Astro.props;
 const now = new Date();
 ---
 
-{time ? <time datetime={time.toISOString()}>{time.getFullYear()}</time> : <span>current</span>}
+{
+	time ? (
+		<time class="time" datetime={time.toISOString()}>
+			{time.getFullYear()}
+		</time>
+	) : (
+		<span class="time">Present</span>
+	)
+}
+
+<style>
+	.time {
+		font-size: 0.8em;
+	}
+</style>

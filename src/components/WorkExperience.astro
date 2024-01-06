@@ -15,12 +15,15 @@ import Time from './Time.astro';
 						<header>
 							<h1>{experience.company}</h1>
 							<div>
-								<time datetime={experience.startDate.toISOString()}>2023</time> -{' '}
-								<Time time={experience.endDate} />
+								<Time time={experience.startDate} /> - <Time time={experience.endDate} />
 							</div>
 						</header>
 						<h2>{experience.role}</h2>
-						<p>{experience.description}</p>
+						<div>
+							{experience.description.map((description) => (
+								<p>{description}</p>
+							))}
+						</div>
 						<ul class="list_tech">
 							{experience.technologies.map((tech) => (
 								<li>{tech}</li>
@@ -56,13 +59,11 @@ import Time from './Time.astro';
 		}
 
 		& h1 {
-			font-size: 0.9em;
-			margin: 0;
+			font-size: 1em;
 		}
 
 		& h2 {
-			font-size: 0.6em;
-			margin: 0;
+			font-size: 0.8em;
 		}
 	}
 

@@ -1,0 +1,50 @@
+---
+import { education } from '../data/education';
+import Time from './Time.astro';
+---
+
+<section>
+	<h1>Education</h1>
+	<ul>
+		{
+			education.map((education) => (
+				<li>
+					<article>
+						<div>
+							<header>
+								<h1>{education.institution}</h1>
+								<div>
+									<Time time={education.startDate} /> - <Time time={education.endDate} />
+								</div>
+							</header>
+							<h2>{education.diploma}</h2>
+						</div>
+						<div>{education.description}</div>
+					</article>
+				</li>
+			))
+		}
+	</ul>
+</section>
+
+<style>
+	article {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		& h1 {
+			font-size: 1em;
+		}
+
+		& h2 {
+			font-size: 0.8em;
+		}
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+</style>
